@@ -1,0 +1,24 @@
+<?php
+
+function echoglob($path) {
+  foreach ( glob($path) as $file ) {
+    echo "<option>".basename($file)."";
+  }
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+Administration
+<pre>
+\rconpassword |password|
+\rcon exec |config name|
+\rcon nextmap |mapname|
+</pre>
+Available Configs<br />
+<select size="10"><? echoglob('/home/utserver/openarena/baseoa/sai_server*.cfg'); ?></select>
+</body>
+</html>
